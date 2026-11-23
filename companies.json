@@ -792,14 +792,6 @@
   ]
  },
  {
-  "company": "Wilson Hartnell",
-  "industry": "Marketing / Media agencies",
-  "slugs": [
-   "wilsonhartnell",
-   "wh"
-  ]
- },
- {
   "company": "Drury",
   "industry": "Marketing / Media agencies",
   "slugs": [
@@ -832,7 +824,8 @@
  },
  {
   "company": "Ogilvy",
-  "industry": "Marketing / Media agencies"
+  "industry": "Marketing / Media agencies",
+  "note": "Ogilvy's board also lists Wilson Hartnell roles"
  },
  {
   "company": "Folk Wunderman Thompson",
