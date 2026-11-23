@@ -682,5 +682,522 @@
  {
   "company": "Bunq",
   "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Boys+Girls",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "boysandgirls",
+   "boys-and-girls",
+   "boysgirls"
+  ]
+ },
+ {
+  "company": "Thinkhouse",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "thinkhouse"
+  ]
+ },
+ {
+  "company": "In The Company of Huskies",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "inthecompanyofhuskies",
+   "huskies"
+  ]
+ },
+ {
+  "company": "Target McConnells",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "targetmcconnells",
+   "target-mcconnells"
+  ]
+ },
+ {
+  "company": "Chemistry",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "chemistry",
+   "chemistrycomms"
+  ]
+ },
+ {
+  "company": "Cawley Nea TBWA",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "cawleynea",
+   "cawleyneatbwa",
+   "tbwa"
+  ]
+ },
+ {
+  "company": "Bonfire",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "bonfire",
+   "bonfiredublin"
+  ]
+ },
+ {
+  "company": "PHD Media",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "phd",
+   "phdmedia"
+  ]
+ },
+ {
+  "company": "OMD",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Starcom",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Zenith",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Initiative",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Carat",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Mediaworks",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "mediaworks",
+   "mediaworksireland"
+  ]
+ },
+ {
+  "company": "Spark Digital",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "sparkdigital"
+  ]
+ },
+ {
+  "company": "Digital Media Experts",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "dme",
+   "digitalmediaexperts"
+  ]
+ },
+ {
+  "company": "Wilson Hartnell",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "wilsonhartnell",
+   "wh"
+  ]
+ },
+ {
+  "company": "Drury",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "drury",
+   "drurycomms"
+  ]
+ },
+ {
+  "company": "Murray Consultants",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "murray",
+   "murrayconsultants"
+  ]
+ },
+ {
+  "company": "Hume Brophy",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "humebrophy"
+  ]
+ },
+ {
+  "company": "FleishmanHillard",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Weber Shandy",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Ogilvy",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Folk Wunderman Thompson",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "folk",
+   "wundermanthompson",
+   "vml"
+  ]
+ },
+ {
+  "company": "McCann",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Accenture Song",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "accenturesong"
+  ]
+ },
+ {
+  "company": "Tribal Worldwide",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Annex",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Fuse",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Verve",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Cognition",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "cognition",
+   "cognitionagency"
+  ]
+ },
+ {
+  "company": "Pigsback / Mediahuis",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "mediahuis",
+   "mediahuisireland"
+  ]
+ },
+ {
+  "company": "Global Radio",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Media Central",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "mediacentral"
+  ]
+ },
+ {
+  "company": "Bauer Media Audio",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "bauermedia",
+   "bauer"
+  ]
+ },
+ {
+  "company": "Spotlight Sports",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "spotlightsports"
+  ]
+ },
+ {
+  "company": "C&C Group",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Irish Distillers",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "irishdistillers",
+   "pernodricard"
+  ]
+ },
+ {
+  "company": "Ornua",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Dawn Meats",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "dawnmeats"
+  ]
+ },
+ {
+  "company": "ABP Food Group",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Kepak",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Valeo Foods",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "valeofoods",
+   "valeo"
+  ]
+ },
+ {
+  "company": "Largo Foods (Tayto)",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "largofoods",
+   "intersnack"
+  ]
+ },
+ {
+  "company": "Flahavan's",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "flahavans"
+  ]
+ },
+ {
+  "company": "Lily O'Brien's",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "lilyobriens"
+  ]
+ },
+ {
+  "company": "Butlers Chocolates",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "butlerschocolates",
+   "butlers"
+  ]
+ },
+ {
+  "company": "Unilever",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Procter & Gamble",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "pg",
+   "proctergamble"
+  ]
+ },
+ {
+  "company": "Nestlé",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "PepsiCo",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Mondelez",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "L'Oréal",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "loreal"
+  ]
+ },
+ {
+  "company": "Reckitt",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Haleon",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Danone",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Mars",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Red Bull",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Carlsberg",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Aldi Ireland",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "aldi"
+  ]
+ },
+ {
+  "company": "Tesco Ireland",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "tesco"
+  ]
+ },
+ {
+  "company": "Dunnes Stores",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Applegreen",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "applegreen"
+  ]
+ },
+ {
+  "company": "Circle K Ireland",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "circlek"
+  ]
+ },
+ {
+  "company": "Boots",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Fyffes",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "fyffes"
+  ]
+ },
+ {
+  "company": "Keelings",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "keelings"
+  ]
+ },
+ {
+  "company": "Barry's Tea",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "barrystea"
+  ]
+ },
+ {
+  "company": "Brennans Bakeries",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "brennans",
+   "brennansbread"
+  ]
+ },
+ {
+  "company": "Glenisk",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "glenisk"
+  ]
+ },
+ {
+  "company": "Pip & Nut",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "pipandnut"
+  ]
+ },
+ {
+  "company": "Huel",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "huel"
+  ]
+ },
+ {
+  "company": "Oatly",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "oatly"
+  ]
+ },
+ {
+  "company": "Allbirds",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "allbirds"
+  ]
+ },
+ {
+  "company": "Gymshark",
+  "industry": "FMCG / Food & Drink",
+  "slugs": [
+   "gymshark"
+  ]
+ },
+ {
+  "company": "Kantar",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "kantar"
+  ]
+ },
+ {
+  "company": "Ipsos",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "ipsos"
+  ]
+ },
+ {
+  "company": "Red C Research",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "redc",
+   "redcresearch"
+  ]
+ },
+ {
+  "company": "Behaviour & Attitudes",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "banda",
+   "behaviourandattitudes"
+  ]
+ },
+ {
+  "company": "NielsenIQ",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "nielseniq",
+   "niq"
+  ]
+ },
+ {
+  "company": "Circana",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "circana"
+  ]
+ },
+ {
+  "company": "Bord Bia",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Enterprise Ireland",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "IDA Ireland",
+  "industry": "Consulting / Professional services"
  }
 ]

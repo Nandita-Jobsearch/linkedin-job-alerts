@@ -5,14 +5,26 @@ import os
 # Narrow queries beat one broad one: each stays well under LinkedIn's
 # rate limit instead of paging deep enough to get blocked.
 ROLES = [
+    # B2B sales
     "sales development representative",
     "business development representative",
     "graduate sales",
-    "graduate marketing",
     "sales intern",
+    # Entry-level marketing in any industry, agencies included
+    "graduate marketing",
     "marketing intern",
     "marketing executive",
     "marketing assistant",
+    "junior marketing",
+    "marketing coordinator",
+    "digital marketing executive",
+    # FMCG entry routes
+    "brand assistant",
+    "trade marketing",
+    "commercial graduate",
+    # Entry-level strategy
+    "junior strategist",
+    "strategy intern",
 ]
 
 # Open to anywhere in Ireland, so search the country rather than a city list.
@@ -36,6 +48,8 @@ GRADIRELAND_KEYWORDS = [
     "sales", "marketing", "business development", "commercial",
     "brand", "account executive", "customer success", "go-to-market",
     "growth", "communications", "advertising", "media",
+    "strateg", "insight", "consumer", "category", "fmcg", "retail",
+    "public relations", "digital marketing", "social media",
 ]
 COUNTRY = "Ireland"
 
@@ -50,16 +64,19 @@ CAREERS_KEYWORDS = [
     "brand", "demand generation", "lead generation",
     "growth marketing", "go-to-market", "gtm", "partnerships",
     "communications", "customer success", "social media", "campaign",
-    "campaigns",
+    "campaigns", "strategy", "strategist", "insights", "category",
+    "public relations",
 ]
 # Company boards list many Account Executive roles, which usually want 1-3
 # years of closing experience. Dropped from company-site results only.
 CAREERS_TITLE_EXCLUDE = ["account executive"]
 
 # Firecrawl-backed boards. One page = one credit; the free plan gives 1,000 a
-# month, so this costs roughly 180/month and leaves plenty of headroom.
+# month, seven searches a day costs roughly 220/month.
 # Keep these single words: both sites use them as URL slugs.
-FIRECRAWL_GLASSDOOR = ["sales", "marketing", "business-development"]
+FIRECRAWL_GLASSDOOR = ["sales", "marketing", "business-development",
+                       "marketing-assistant", "graduate-marketing",
+                       "marketing-intern", "junior-strategist"]
 # jobs.ie is off. Its /jobs/<term> pages are SEO landing pages: the markup
 # holds location facets and company logos but no linked job titles, so there
 # is nothing stable to parse. Left wired up in case that changes.
@@ -67,7 +84,8 @@ FIRECRAWL_JOBS_IE = []
 
 RESULTS_PER_QUERY = 40
 HOURS_OLD = 26          # slight overlap with the daily cron; dedupe handles it
-DELAY_BETWEEN_QUERIES = 4
+# 16 roles x 2 boards: a longer gap keeps LinkedIn from rate-limiting the run.
+DELAY_BETWEEN_QUERIES = 9
 
 # Drop anything whose title matches these before it reaches you.
 # Matched as whole words (see scan._EXCLUDE_RX), so "lead" no longer rejects
