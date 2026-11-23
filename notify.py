@@ -4,9 +4,11 @@ WhatsApp template parameters cannot contain newlines, so the WhatsApp message
 is deliberately a short summary. The full table goes by email.
 """
 
+import html
 import logging
 import smtplib
 from email.message import EmailMessage
+from urllib.parse import quote_plus
 
 import requests
 
@@ -27,6 +29,37 @@ SITE_NAMES = {
 
 TH = "padding:8px 12px;text-align:left;border-bottom:2px solid #ddd;font-size:13px"
 TD = "padding:8px 12px;border-bottom:1px solid #eee;vertical-align:top"
+
+
+def company_links(job):
+    """(label, url) pairs for finding out about the employer.
+
+    Boards differ: Indeed (and sometimes others) give the employer's own
+    website, LinkedIn gives its company page, Glassdoor and gradireland give
+    neither. Every job with a company name gets at least one link, falling
+    back to a web search so there is always somewhere to click.
+    """
+    links = []
+    site = (job.get("company_url_direct") or "").strip()
+    if site.startswith(("http://", "https://")):
+        links.append(("website", site))
+    page = (job.get("company_url") or "").strip()
+    if "linkedin.com/company/" in page:
+        links.append(("LinkedIn", page))
+    name = (job.get("company") or "").strip()
+    if not links and name:
+        links.append(("find website",
+                      "https://www.google.com/search?q="
+                      + quote_plus(f"{name} official website")))
+    return links
+
+
+def _company_cell(job):
+    name = html.escape(job.get("company") or "")
+    links = " · ".join(
+        f"<a href='{html.escape(url, quote=True)}' style='font-size:11px'>{label}</a>"
+        for label, url in company_links(job))
+    return f"{name}<br>{links}" if links else name
 
 
 def _signals_cell(job):
@@ -59,7 +92,7 @@ def _rows(jobs):
         out.append(
             f"<tr>"
             f"<td style='{TD}'><a href='{job['job_url']}'>{job.get('title') or ''}</a>{repost}</td>"
-            f"<td style='{TD}'>{job.get('company') or ''}</td>"
+            f"<td style='{TD}'>{_company_cell(job)}</td>"
             f"<td style='{TD};{exp_style}'>{exp}</td>"
             f"<td style='{TD}'>{job.get('location') or ''}</td>"
             f"<td style='{TD}'>{_signals_cell(job)}</td>"
@@ -136,6 +169,8 @@ def _plain(jobs):
     for j in jobs:
         badges = insights.badges(j)
         extra = f"\n  {' | '.join(badges)}" if badges else ""
+        for label, url in company_links(j):
+            extra += f"\n  company {label}: {url}"
         lines.append(
             f"{j.get('title')} | {j.get('company')} | {j.get('exp_label')} | "
             f"{j.get('location')} | {SITE_NAMES.get(j.get('site'), j.get('site'))}\n"

@@ -25,6 +25,7 @@ KEEP = ["site", "id", "title", "company", "location", "job_url",
         "date_posted", "job_level", "description",
         "job_url_direct", "job_type", "company_rating",
         "company_num_employees",
+        "company_url", "company_url_direct",
         "min_amount", "max_amount", "currency"]
 
 
