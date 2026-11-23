@@ -201,35 +201,70 @@ def bamboohr(entry):
                         ats_loc.get("country"), ats_loc.get("city")))
 
 
-def workday(entry, searches=("sales", "marketing", "business development"),
-            max_pages=5):
-    """Workday has no list-everything feed; its careers page searches.
+def _workday_post(api, body, tries=4):
+    """Workday answers 429 when read quickly from shared CI addresses."""
+    for attempt in range(tries):
+        resp = requests.post(api, headers={**HEADERS, "content-type": "application/json"},
+                             json=body, timeout=TIMEOUT)
+        if resp.status_code != 429 or attempt == tries - 1:
+            resp.raise_for_status()
+            return resp.json()
+        time.sleep(5 * (attempt + 1))
+
+
+def workday_irish_facets(facets):
+    """Workday's own location filter for Ireland, as appliedFacets.
+
+    Prefers a country facet; falls back to every Irish city/location value.
+    Tenants nest facet groups differently, so the tree is walked.
+    """
+    found = {}
+
+    def walk(groups):
+        for group in groups or []:
+            param = group.get("facetParameter") or ""
+            for value in group.get("values") or []:
+                if value.get("values"):
+                    walk([value])
+                elif value.get("id") and is_irish(value.get("descriptor")):
+                    found.setdefault(param, []).append(value["id"])
+
+    walk(facets)
+    country = {p: ids for p, ids in found.items() if "country" in p.lower()}
+    return country or found
+
+
+def workday(entry, max_pages=25):
+    """Workday careers sites have a search API rather than a full feed.
 
     `slug` is "<host>/<tenant>/<site>", e.g.
     "salesforce.wd12.myworkdayjobs.com/salesforce/External_Career_Site".
+    The search is narrowed with the site's own Ireland filter, so every job
+    returned is Irish even when it only says "2 Locations".
     """
     host, tenant, site = entry["slug"].split("/")
     api = f"https://{host}/wday/cxs/{tenant}/{site}/jobs"
+    first = _workday_post(api, {"appliedFacets": {}, "limit": 1, "offset": 0,
+                                "searchText": ""})
+    facets = workday_irish_facets(first.get("facets"))
+    body = ({"appliedFacets": facets, "searchText": ""} if facets
+            else {"appliedFacets": {}, "searchText": "Ireland"})
+
     seen = set()
-    for term in searches:
-        for page in range(max_pages):
-            resp = requests.post(api, headers={**HEADERS, "content-type": "application/json"},
-                                 json={"appliedFacets": {}, "limit": 20,
-                                       "offset": page * 20, "searchText": term},
-                                 timeout=TIMEOUT)
-            resp.raise_for_status()
-            postings = resp.json().get("jobPostings") or []
-            for job in postings:
-                path = job.get("externalPath") or ""
-                if not path or path in seen:
-                    continue
-                seen.add(path)
-                yield (_row(entry, path.rsplit("_", 1)[-1], job.get("title"),
-                            job.get("locationsText"), f"https://{host}/en-US/{site}{path}"),
-                       is_irish(job.get("locationsText"), path))
-            if len(postings) < 20:
-                break
-            time.sleep(0.5)
+    for page in range(max_pages):
+        time.sleep(1)
+        postings = _workday_post(api, {**body, "limit": 20, "offset": page * 20}
+                                 ).get("jobPostings") or []
+        for job in postings:
+            path = job.get("externalPath") or ""
+            if not path or path in seen:
+                continue
+            seen.add(path)
+            yield (_row(entry, path.rsplit("_", 1)[-1], job.get("title"),
+                        job.get("locationsText"), f"https://{host}/en-US/{site}{path}"),
+                   bool(facets) or is_irish(job.get("locationsText"), path))
+        if len(postings) < 20:
+            break
 
 
 ADAPTERS = {

@@ -129,19 +129,50 @@ def test_bamboohr(monkeypatch):
     assert irish and row["job_url"] == "https://acme.bamboohr.com/careers/3"
 
 
-def test_workday_dedupes_across_searches(monkeypatch):
-    posting = {"title": "Account Executive", "locationsText": "Dublin, Ireland",
-               "externalPath": "/job/Dublin/Account-Executive_JR1"}
+FACETS = [
+    {"facetParameter": "locationCountry", "values": [
+        {"descriptor": "United States of America", "id": "us1"},
+        {"descriptor": "Ireland", "id": "ie1"}]},
+    {"facetParameter": "locationMainGroup", "values": [
+        {"facetParameter": "locations", "values": [
+            {"descriptor": "Dublin, Ireland", "id": "dub1"},
+            {"descriptor": "Belfast, Northern Ireland", "id": "bel1"}]}]},
+]
 
-    def fake_post(url, **kw):
-        return FakeResp({"jobPostings": [posting]})
+
+def test_workday_prefers_country_facet():
+    assert careers.workday_irish_facets(FACETS) == {"locationCountry": ["ie1"]}
+
+
+def test_workday_falls_back_to_irish_locations():
+    assert careers.workday_irish_facets(FACETS[1:]) == {"locations": ["dub1"]}
+
+
+class WDResp(FakeResp):
+    def __init__(self, data, status=200):
+        super().__init__(data)
+        self.status_code = status
+
+
+def test_workday_filters_to_ireland_and_retries_when_busy(monkeypatch):
+    posting = {"title": "Account Executive", "locationsText": "2 Locations",
+               "externalPath": "/job/Dublin/Account-Executive_JR1"}
+    bodies, replies = [], iter([
+        WDResp({}, 429),                                  # busy, retried
+        WDResp({"facets": FACETS, "jobPostings": []}),
+        WDResp({"jobPostings": [posting]}),
+    ])
+
+    def fake_post(url, json=None, **kw):
+        bodies.append(json)
+        return next(replies)
 
     monkeypatch.setattr(careers.requests, "post", fake_post)
+    monkeypatch.setattr(careers.time, "sleep", lambda s: None)
     e = entry("workday", slug="acme.wd1.myworkdayjobs.com/acme/External")
-    rows = careers.board_jobs(e)
-    assert len(rows) == 1
-    row, irish = rows[0]
-    assert irish
+    (row, irish), = careers.board_jobs(e)
+    assert irish                       # facet-filtered, despite "2 Locations"
+    assert bodies[-1]["appliedFacets"] == {"locationCountry": ["ie1"]}
     assert row["job_url"] == ("https://acme.wd1.myworkdayjobs.com/en-US/External"
                               "/job/Dublin/Account-Executive_JR1")
 
