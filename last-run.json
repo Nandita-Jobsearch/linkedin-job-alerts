@@ -1,1 +1,29 @@
-{}
+{
+  "at": "2026-11-23T21:04:22+00:00",
+  "dedupe": {
+    "dup_content": 10,
+    "dup_id": 0,
+    "new": 175,
+    "repost": 0,
+    "total": 185
+  },
+  "failures": [],
+  "fetched": {
+    "_dropped": {
+      "by_title": 50,
+      "dup_in_run": 90
+    },
+    "_enrichment": {
+      "dead": 0,
+      "enriched": 32,
+      "reclassified": 5,
+      "with_applicants": 32
+    },
+    "glassdoor": 90,
+    "gradireland": 14,
+    "indeed": 28,
+    "linkedin": 193
+  },
+  "new": 175,
+  "recipients": 1
+}
