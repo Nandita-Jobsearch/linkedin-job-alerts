@@ -1,0 +1,33 @@
+name: Workday probe (temporary)
+on:
+  workflow_dispatch: {}
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: |
+          python - <<'PY'
+          import json, requests
+          for c in json.load(open("companies.json")):
+              if not c.get("workday"): continue
+              host, tenant, site = c["workday"].split("/")
+              for url in (f"https://{host}/{site}", f"https://{host}/en-US/{site}"):
+                  try:
+                      r = requests.get(url, timeout=20, allow_redirects=False)
+                      print(c["company"], "GET", url, r.status_code, r.headers.get("location", ""))
+                  except Exception as e:
+                      print(c["company"], "GET", url, type(e).__name__, str(e)[:120])
+              api = f"https://{host}/wday/cxs/{tenant}/{site}/jobs"
+              try:
+                  r = requests.post(api, json={"appliedFacets": {}, "limit": 20, "offset": 0, "searchText": "sales"},
+                                    headers={"content-type": "application/json", "accept": "application/json"}, timeout=20)
+                  print(c["company"], "POST", r.status_code, r.text[:200].replace("\n", " "))
+              except Exception as e:
+                  print(c["company"], "POST", type(e).__name__, str(e)[:120])
+          PY

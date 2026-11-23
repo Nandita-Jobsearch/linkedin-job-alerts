@@ -45,7 +45,10 @@ def probe(company):
         entry = {"company": company["company"], "ats": ats, "slug": slug}
         try:
             rows = careers.board_jobs(entry)
-        except Exception:
+        except Exception as exc:
+            if ats == "workday":
+                print(f"workday {company['company']}: {type(exc).__name__}: {str(exc)[:200]}",
+                      flush=True)
             continue
         if not rows:
             continue
