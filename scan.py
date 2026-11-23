@@ -11,6 +11,7 @@ import time
 import pandas as pd
 from jobspy import scrape_jobs
 
+import careers
 import config
 import experience
 import firecrawl_source
@@ -96,6 +97,14 @@ def collect():
         except Exception as exc:
             failures.append(f"gradireland: {type(exc).__name__}")
             log.warning("gradireland failed: %s", exc)
+
+    # Companies' own careers pages, read through their hiring system's feed.
+    if config.USE_COMPANY_SITES:
+        found, broken = careers.fetch(config.CAREERS_KEYWORDS)
+        jobs.extend(found)
+        failures.extend(broken)
+        fetched[careers.SITE] = len(found)
+        log.info("company sites -> %d (%d boards failed)", len(found), len(broken))
 
     # Boards that block CI runners directly go via Firecrawl's proxy layer.
     for label, fn, keywords in (

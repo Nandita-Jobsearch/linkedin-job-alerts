@@ -39,6 +39,20 @@ GRADIRELAND_KEYWORDS = [
 ]
 COUNTRY = "Ireland"
 
+# Companies' own careers pages (see careers.py). Which companies, and which
+# hiring system each uses, lives in careers-map.json; re-run the "Find company
+# careers pages" workflow after editing companies.json.
+USE_COMPANY_SITES = True
+# Whole-word, case-insensitive matches against the job title. Company boards
+# list every role they have, so these keep only sales and marketing ones.
+CAREERS_KEYWORDS = [
+    "sales", "marketing", "marketer", "business development", "sdr", "bdr",
+    "account executive", "brand", "demand generation", "lead generation",
+    "growth marketing", "go-to-market", "gtm", "partnerships",
+    "communications", "customer success", "social media", "campaign",
+    "campaigns",
+]
+
 # Firecrawl-backed boards. One page = one credit; the free plan gives 1,000 a
 # month, so this costs roughly 180/month and leaves plenty of headroom.
 # Keep these single words: both sites use them as URL slugs.

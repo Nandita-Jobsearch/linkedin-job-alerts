@@ -1,0 +1,686 @@
+[
+ {
+  "company": "Stripe",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Intercom",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "HubSpot",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "hubspotjobs",
+   "hubspot"
+  ]
+ },
+ {
+  "company": "Datadog",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Qualtrics",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Wayflyer",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Zendesk",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Dropbox",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Okta",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Cloudflare",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "MongoDB",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Squarespace",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Toast",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Workhuman",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Tines",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Flipdish",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Version 1",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "version1",
+   "version-1"
+  ]
+ },
+ {
+  "company": "Twilio",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Pinterest",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Airbnb",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Udemy",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Etsy",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Coinbase",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Elastic",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Snowflake",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Notion",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Deel",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Rippling",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Gong",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "gongio",
+   "gong"
+  ]
+ },
+ {
+  "company": "Sprout Social",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "sproutsocial"
+  ]
+ },
+ {
+  "company": "New Relic",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "newrelic"
+  ]
+ },
+ {
+  "company": "Wrike",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Asana",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Clio",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "SurveyMonkey",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "surveymonkey",
+   "momentive"
+  ]
+ },
+ {
+  "company": "Miro",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Pipedrive",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Docusign",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Databricks",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Grammarly",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Smartsheet",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Yelp",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Kitman Labs",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "kitmanlabs"
+  ]
+ },
+ {
+  "company": "Learnosity",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Fenergo",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Evervault",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Nory",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Teamwork.com",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "teamwork",
+   "teamworkcom"
+  ]
+ },
+ {
+  "company": "Glofox",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Phorest",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "LetsGetChecked",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "letsgetchecked"
+  ]
+ },
+ {
+  "company": "CarTrawler",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Hostelworld",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Distilled (Daft.ie)",
+  "industry": "Tech / SaaS",
+  "slugs": [
+   "distilled",
+   "distilledsch"
+  ]
+ },
+ {
+  "company": "Workvivo",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Payslip",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Trustap",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Datalex",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Bizimply",
+  "industry": "Tech / SaaS"
+ },
+ {
+  "company": "Salesforce",
+  "industry": "Tech / SaaS",
+  "workday": "salesforce.wd12.myworkdayjobs.com/salesforce/External_Career_Site"
+ },
+ {
+  "company": "Workday",
+  "industry": "Tech / SaaS",
+  "workday": "workday.wd5.myworkdayjobs.com/workday/Workday"
+ },
+ {
+  "company": "Adobe",
+  "industry": "Tech / SaaS",
+  "workday": "adobe.wd5.myworkdayjobs.com/adobe/external_experienced"
+ },
+ {
+  "company": "Zoom",
+  "industry": "Tech / SaaS",
+  "workday": "zoom.wd5.myworkdayjobs.com/zoom/Zoom"
+ },
+ {
+  "company": "Fexco",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "TransferMate",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Ebury",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Payoneer",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Revolut",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "N26",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Klarna",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Plaid",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Swoop Funding",
+  "industry": "Fintech / Payments",
+  "slugs": [
+   "swoop",
+   "swoopfunding"
+  ]
+ },
+ {
+  "company": "Featurespace",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Boku",
+  "industry": "Fintech / Payments"
+ },
+ {
+  "company": "Mastercard",
+  "industry": "Fintech / Payments",
+  "workday": "mastercard.wd1.myworkdayjobs.com/mastercard/CorporateCareers"
+ },
+ {
+  "company": "PayPal",
+  "industry": "Fintech / Payments",
+  "workday": "paypal.wd1.myworkdayjobs.com/paypal/jobs"
+ },
+ {
+  "company": "Accenture",
+  "industry": "Consulting / Professional services",
+  "workday": "accenture.wd103.myworkdayjobs.com/accenture/AccentureCareers"
+ },
+ {
+  "company": "Slalom",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Thoughtworks",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Avanade",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Capgemini",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Cognizant",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Grant Thornton",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "BDO",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Forvis Mazars",
+  "industry": "Consulting / Professional services",
+  "slugs": [
+   "mazars",
+   "forvismazars"
+  ]
+ },
+ {
+  "company": "Kinesis",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Eagle Alpha",
+  "industry": "Consulting / Professional services"
+ },
+ {
+  "company": "Publicis Groupe",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "publicisgroupe",
+   "publicis"
+  ]
+ },
+ {
+  "company": "Havas",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "WPP",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Dentsu",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Wolfgang Digital",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "wolfgangdigital",
+   "wolfgang"
+  ]
+ },
+ {
+  "company": "Rothco",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Core (marketing agency)",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "core",
+   "corecommunications",
+   "coreagency"
+  ]
+ },
+ {
+  "company": "Javelin",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Spark Foundry",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Edelman",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Teneo",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "teneo"
+  ]
+ },
+ {
+  "company": "Mindshare",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Kinesso",
+  "industry": "Marketing / Media agencies",
+  "slugs": [
+   "kinesso"
+  ]
+ },
+ {
+  "company": "Croud",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Brainlabs",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Jellyfish",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Wavemaker",
+  "industry": "Marketing / Media agencies"
+ },
+ {
+  "company": "Sigmar Recruitment",
+  "industry": "Recruitment / Staffing",
+  "slugs": [
+   "sigmar",
+   "sigmarrecruitment"
+  ]
+ },
+ {
+  "company": "Morgan McKinley",
+  "industry": "Recruitment / Staffing",
+  "slugs": [
+   "morganmckinley"
+  ]
+ },
+ {
+  "company": "Cpl",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Hays",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Harvey Nash",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Robert Walters",
+  "industry": "Recruitment / Staffing",
+  "slugs": [
+   "robertwalters"
+  ]
+ },
+ {
+  "company": "Michael Page",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Hudson",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Collins McNicholas",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Abrivia",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Lincoln Recruitment",
+  "industry": "Recruitment / Staffing"
+ },
+ {
+  "company": "Vodafone",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Three",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Eir",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Virgin Media",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Sky",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Spotify",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "TikTok",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Bauer Media",
+  "industry": "Telecoms / Media"
+ },
+ {
+  "company": "Ryanair",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Aer Lingus",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Dalata",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Booking.com",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Expedia",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Just Eat Takeaway",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Deliveroo",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Bolt",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Uber",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Too Good To Go",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Lidl",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Musgrave",
+  "industry": "Travel / Hospitality / Consumer"
+ },
+ {
+  "company": "Kerry Group",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Glanbia",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Diageo",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Heineken",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Britvic",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Coca-Cola HBC",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "Tirlán",
+  "industry": "FMCG / Food & Drink"
+ },
+ {
+  "company": "AIB",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Bank of Ireland",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "PTSB",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Zurich",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Aviva",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Allianz",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "FBD",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Irish Life",
+  "industry": "Banking / Insurance"
+ },
+ {
+  "company": "Bunq",
+  "industry": "Banking / Insurance"
+ }
+]
