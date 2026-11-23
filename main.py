@@ -1,0 +1,88 @@
+"""scan -> dedupe -> sort -> notify. Exits 0 even on a quiet day."""
+
+import json
+import logging
+import sys
+from datetime import datetime, timezone
+
+import config
+import enrich
+import notify
+import notion_source
+import scan
+import seen_store
+
+
+def _write_run_log(stats, fetched, failures, new_count):
+    """A committed record of what each source did, so failures are debuggable
+    after the fact without re-running anything."""
+    try:
+        with open("last-run.json", "w") as fh:
+            json.dump({
+                "at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                "fetched": fetched,
+                "new": new_count,
+                "dedupe": stats,
+                "failures": failures,
+                # Count only. The addresses must never land in a public repo,
+                # but the count makes a DIGEST_TO change verifiable from here.
+                "recipients": len(notify.recipients()),
+            }, fh, indent=2, sort_keys=True)
+    except Exception as exc:          # never let logging break a run
+        logging.warning("could not write run log: %s", exc)
+
+
+def run():
+    jobs, failures, fetched = scan.collect()
+
+    # Roles already in the Notion tracker never need reporting again.
+    applied = notion_source.applied_keys()
+    if applied:
+        before = len(jobs)
+        jobs = [j for j in jobs if not notion_source.already_applied(j, applied)]
+        logging.info("notion: dropped %d already-applied", before - len(jobs))
+        fetched["_dropped"]["already_applied"] = before - len(jobs)
+
+    state = seen_store.load()
+    fresh, stats = seen_store.filter_new(jobs, state)
+    seen_store.save(state)
+
+    logging.info("stats: %s", stats)
+
+    if not fresh:
+        # Still send, so a silent source failure is visible rather than
+        # looking identical to a genuinely quiet day.
+        logging.info("nothing new today")
+        _write_run_log(stats, fetched, failures, 0)
+        notify.send_email([], failures, False, fetched)
+        return 0
+
+    # Most junior first; reposts sink within their tier; then company for
+    # a stable order run to run.
+    if config.ENRICH_SHORTLIST:
+        fresh, enrich_stats = enrich.enrich(fresh)
+        fetched["_enrichment"] = enrich_stats
+        if not fresh:
+            _write_run_log(stats, fetched, failures, 0)
+            notify.send_email([], failures, False, fetched)
+            return 0
+
+    fresh.sort(key=lambda j: (
+        j.get("exp_rank", 9),
+        j.get("is_repost", False),
+        (j.get("company") or "").lower(),
+    ))
+
+    _write_run_log(stats, fetched, failures, len(fresh))
+
+    wa_ok = notify.send_whatsapp(fresh)
+    notify.send_email(fresh, failures, wa_ok, fetched)
+    return 0
+
+
+if __name__ == "__main__":
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(name)s %(message)s",
+    )
+    sys.exit(run())
