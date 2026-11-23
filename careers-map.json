@@ -120,6 +120,12 @@
   "slug": "notion"
  },
  {
+  "company": "Ogilvy",
+  "industry": "Marketing / Media agencies",
+  "ats": "greenhouse",
+  "slug": "ogilvy"
+ },
+ {
   "company": "Okta",
   "industry": "Tech / SaaS",
   "ats": "greenhouse",
@@ -198,16 +204,34 @@
   "slug": "twilio"
  },
  {
+  "company": "Valeo Foods",
+  "industry": "FMCG / Food & Drink",
+  "ats": "bamboohr",
+  "slug": "valeofoods"
+ },
+ {
   "company": "Version 1",
   "industry": "Tech / SaaS",
   "ats": "smartrecruiters",
   "slug": "version1"
  },
  {
+  "company": "Verve",
+  "industry": "Marketing / Media agencies",
+  "ats": "greenhouse",
+  "slug": "verve"
+ },
+ {
   "company": "Wayflyer",
   "industry": "Tech / SaaS",
   "ats": "ashby",
   "slug": "wayflyer"
+ },
+ {
+  "company": "Wilson Hartnell",
+  "industry": "Marketing / Media agencies",
+  "ats": "greenhouse",
+  "slug": "wilsonhartnell"
  },
  {
   "company": "Wolfgang Digital",
