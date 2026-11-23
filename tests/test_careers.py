@@ -199,3 +199,15 @@ def test_fetch_keeps_irish_matching_roles_and_isolates_failures(monkeypatch):
 
 def test_missing_map_means_no_companies(tmp_path):
     assert careers.load_map(tmp_path / "nope.json") == []
+
+
+def test_fetch_drops_excluded_titles(monkeypatch):
+    e = entry("greenhouse")
+    mk = lambda t: careers._row(e, t, t, "Dublin", "https://x/" + t)
+    monkeypatch.setattr(careers, "board_jobs", lambda _: [
+        (mk("Sales Development Representative"), True),
+        (mk("Commercial Account Executive"), True)])
+    monkeypatch.setattr(careers.time, "sleep", lambda s: None)
+    jobs, _ = careers.fetch(["sales", "account executive"], [e],
+                            exclude=["account executive"])
+    assert [j["title"] for j in jobs] == ["Sales Development Representative"]

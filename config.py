@@ -47,11 +47,14 @@ USE_COMPANY_SITES = True
 # list every role they have, so these keep only sales and marketing ones.
 CAREERS_KEYWORDS = [
     "sales", "marketing", "marketer", "business development", "sdr", "bdr",
-    "account executive", "brand", "demand generation", "lead generation",
+    "brand", "demand generation", "lead generation",
     "growth marketing", "go-to-market", "gtm", "partnerships",
     "communications", "customer success", "social media", "campaign",
     "campaigns",
 ]
+# Company boards list many Account Executive roles, which usually want 1-3
+# years of closing experience. Dropped from company-site results only.
+CAREERS_TITLE_EXCLUDE = ["account executive"]
 
 # Firecrawl-backed boards. One page = one credit; the free plan gives 1,000 a
 # month, so this costs roughly 180/month and leaves plenty of headroom.
@@ -73,6 +76,19 @@ DELAY_BETWEEN_QUERIES = 4
 TITLE_EXCLUDE = [
     "senior", "snr", "staff", "principal", "lead", "manager",
     "director", "head", "vp",
+]
+
+# Roles that need a language other than English, or cover a non-English
+# market. Same whole-word matching as TITLE_EXCLUDE, applied to every source.
+# "English speaking" roles are kept: only other languages are listed here.
+LANGUAGE_EXCLUDE = [
+    "german", "germany", "french", "france", "dutch", "netherlands", "flemish",
+    "belgium", "italian", "italy", "spanish", "spain", "portuguese", "portugal",
+    "brazil", "latam", "swedish", "danish", "norwegian", "finnish", "nordic",
+    "nordics", "dach", "benelux", "iberia", "polish", "poland", "czech",
+    "hungarian", "romanian", "greek", "turkish", "russian", "ukrainian",
+    "arabic", "hebrew", "mandarin", "cantonese", "chinese", "japanese",
+    "japan", "korean", "cee", "mena", "switzerland", "austria",
 ]
 
 # Secrets come from the environment.

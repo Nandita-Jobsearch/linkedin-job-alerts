@@ -292,9 +292,10 @@ def load_map(path=MAP_PATH):
         return []
 
 
-def fetch(keywords, entries=None):
+def fetch(keywords, entries=None, exclude=()):
     """Irish, role-matching jobs from every mapped company.
 
+    `exclude` drops titles matching any of those words (whole-word).
     Returns (jobs, failures). One broken board never stops the others.
     """
     entries = load_map() if entries is None else entries
@@ -302,7 +303,8 @@ def fetch(keywords, entries=None):
     for entry in entries:
         try:
             kept = [row for row, irish in board_jobs(entry)
-                    if irish and title_matches(row["title"], keywords)]
+                    if irish and title_matches(row["title"], keywords)
+                    and not (exclude and title_matches(row["title"], exclude))]
             jobs.extend(kept)
             log.info("company site %s (%s) -> %d", entry["company"], entry["ats"], len(kept))
         except Exception as exc:

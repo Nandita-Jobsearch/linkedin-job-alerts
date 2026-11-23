@@ -34,7 +34,8 @@ KEEP = ["site", "id", "title", "company", "location", "job_url",
 # "Graduate Leadership Programme" and "staff" reject "Staffing Analyst",
 # which was quietly discarding a third of everything fetched.
 _EXCLUDE_RX = re.compile(
-    r"\b(?:" + "|".join(re.escape(w.strip()) for w in config.TITLE_EXCLUDE) + r")\b",
+    r"\b(?:" + "|".join(re.escape(w.strip())
+                        for w in config.TITLE_EXCLUDE + config.LANGUAGE_EXCLUDE) + r")\b",
     re.I,
 )
 
@@ -100,7 +101,8 @@ def collect():
 
     # Companies' own careers pages, read through their hiring system's feed.
     if config.USE_COMPANY_SITES:
-        found, broken = careers.fetch(config.CAREERS_KEYWORDS)
+        found, broken = careers.fetch(config.CAREERS_KEYWORDS,
+                                      exclude=config.CAREERS_TITLE_EXCLUDE)
         jobs.extend(found)
         failures.extend(broken)
         fetched[careers.SITE] = len(found)

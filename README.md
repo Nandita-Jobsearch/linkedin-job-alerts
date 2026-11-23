@@ -132,3 +132,19 @@ main.py               scan -> dedupe -> sort -> notify -> log
 ```
 
 MIT.
+
+## Company careers pages
+
+Besides the job boards, the daily run reads companies' own careers pages
+(`careers.py`). It works for companies whose careers page runs on Greenhouse,
+Lever, Ashby, SmartRecruiters, Workable, Recruitee, Personio or BambooHR.
+
+- `companies.json` is the list of companies to try. Add or remove names there.
+- Then run **Actions > Find company careers pages > Run workflow**. It works out
+  which system each company uses, saves `careers-map.json` (what the daily run
+  reads) and writes `careers-discovery.md`, a report of what was found.
+- `CAREERS_KEYWORDS` in `config.py` decides which job titles count as sales or
+  marketing roles. `LANGUAGE_EXCLUDE` hides roles that need another language.
+
+Workday-hosted careers sites (Salesforce, Workday, Adobe, Mastercard, PayPal,
+Accenture) refuse requests from GitHub's servers, so they are not covered.
