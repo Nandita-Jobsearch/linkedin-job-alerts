@@ -66,7 +66,9 @@ def _one(site, role, location):
     for col in KEEP:
         if col not in df.columns:
             df[col] = None
-    df = df[KEEP].where(pd.notnull(df[KEEP]), None)
+    # astype(object) first: on a float column (e.g. one that is empty for
+    # every row) where() keeps NaN instead of None, and NaN is truthy.
+    df = df[KEEP].astype(object).where(pd.notnull(df[KEEP]), None)
     return df.to_dict("records")
 
 

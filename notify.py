@@ -32,6 +32,11 @@ TH = "padding:8px 12px;text-align:left;border-bottom:2px solid #ddd;font-size:13
 TD = "padding:8px 12px;border-bottom:1px solid #eee;vertical-align:top"
 
 
+def _text(value):
+    """A stripped string, or "" for None, NaN and other non-strings."""
+    return value.strip() if isinstance(value, str) else ""
+
+
 def company_links(job):
     """(label, url) pairs for finding out about the employer.
 
@@ -41,13 +46,13 @@ def company_links(job):
     back to a web search so there is always somewhere to click.
     """
     links = []
-    site = (job.get("company_url_direct") or "").strip()
+    site = _text(job.get("company_url_direct"))
     if site.startswith(("http://", "https://")):
         links.append(("website", site))
-    page = (job.get("company_url") or "").strip()
+    page = _text(job.get("company_url"))
     if "linkedin.com/company/" in page:
         links.append(("LinkedIn", page))
-    name = (job.get("company") or "").strip()
+    name = _text(job.get("company"))
     if not links and name:
         links.append(("find website",
                       "https://www.google.com/search?q="

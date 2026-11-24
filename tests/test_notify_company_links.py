@@ -40,3 +40,12 @@ def test_email_row_carries_the_company_link():
            "company_url_direct": "https://acme.ie", "site": "indeed"}
     assert "https://acme.ie" in notify._html([job], [], False, {})
     assert "company website: https://acme.ie" in notify._plain([job])
+
+
+def test_nan_fields_from_pandas_do_not_crash():
+    """Regression: a float NaN in company_url_direct crashed the 24 Nov run."""
+    nan = float("nan")
+    job = {"title": "SDR", "company": "Acme", "job_url": "https://j/1",
+           "company_url_direct": nan, "company_url": nan, "site": "linkedin"}
+    assert notify.company_links(job)[0][0] == "find website"
+    assert "Acme" in notify._plain([job])
